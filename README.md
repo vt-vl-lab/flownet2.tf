@@ -23,7 +23,7 @@ To download the weights for all models (4.4GB), run the `download.sh` script in 
 python demo.py
 ```
 
-If installation is successful, you should predict the following flow from samples/0img0.ppm:
+If installation is successful, you should see the following:
 ![FlowNet2 Sample Prediction](/FlowNet2_src/example/0flow-pred-flownet2.png?raw=true)
 
 Notice that the model itself will handle the RGB to BGR operation for you. And please be care about your input scale and datatype.

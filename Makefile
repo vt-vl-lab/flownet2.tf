@@ -15,31 +15,31 @@ LFLAGS    = -pthread -shared -fPIC
 GPULFLAGS = -x cu -Xcompiler -fPIC
 CGPUFLAGS = -L$(CUDA_HOME)/lib -L$(CUDA_HOME)/lib64 -lcudart
 
-OUT_DIR   = src/ops/build
-PREPROCESSING_SRC = "src/ops/preprocessing/preprocessing.cc" "src/ops/preprocessing/kernels/flow_augmentation.cc" "src/ops/preprocessing/kernels/augmentation_base.cc" "src/ops/preprocessing/kernels/data_augmentation.cc"
-GPU_SRC_DATA_AUG  	= src/ops/preprocessing/kernels/data_augmentation.cu.cc
-GPU_SRC_FLOW     	= src/ops/preprocessing/kernels/flow_augmentation_gpu.cu.cc
+OUT_DIR   = FlowNet2_src/ops/build
+PREPROCESSING_SRC = "FlowNet2_src/ops/preprocessing/preprocessing.cc" "FlowNet2_src/ops/preprocessing/kernels/flow_augmentation.cc" "FlowNet2_src/ops/preprocessing/kernels/augmentation_base.cc" "FlowNet2_src/ops/preprocessing/kernels/data_augmentation.cc"
+GPU_SRC_DATA_AUG  	= FlowNet2_src/ops/preprocessing/kernels/data_augmentation.cu.cc
+GPU_SRC_FLOW     	= FlowNet2_src/ops/preprocessing/kernels/flow_augmentation_gpu.cu.cc
 GPU_PROD_DATA_AUG 	= $(OUT_DIR)/data_augmentation.o
 GPU_PROD_FLOW    	= $(OUT_DIR)/flow_augmentation_gpu.o
 PREPROCESSING_PROD	= $(OUT_DIR)/preprocessing.so
 
-DOWNSAMPLE_SRC = "src/ops/downsample/downsample_kernel.cc" "src/ops/downsample/downsample_op.cc"
-GPU_SRC_DOWNSAMPLE  = src/ops/downsample/downsample_kernel_gpu.cu.cc
+DOWNSAMPLE_SRC = "FlowNet2_src/ops/downsample/downsample_kernel.cc" "FlowNet2_src/ops/downsample/downsample_op.cc"
+GPU_SRC_DOWNSAMPLE  = FlowNet2_src/ops/downsample/downsample_kernel_gpu.cu.cc
 GPU_PROD_DOWNSAMPLE = $(OUT_DIR)/downsample_kernel_gpu.o
 DOWNSAMPLE_PROD 	= $(OUT_DIR)/downsample.so
 
-CORRELATION_SRC = "src/ops/correlation/correlation_kernel.cc" "src/ops/correlation/correlation_grad_kernel.cc" "src/ops/correlation/correlation_op.cc"
-GPU_SRC_CORRELATION  = src/ops/correlation/correlation_kernel.cu.cc
-GPU_SRC_CORRELATION_GRAD  = src/ops/correlation/correlation_grad_kernel.cu.cc
-GPU_SRC_PAD = src/ops/correlation/pad.cu.cc
+CORRELATION_SRC = "FlowNet2_src/ops/correlation/correlation_kernel.cc" "FlowNet2_src/ops/correlation/correlation_grad_kernel.cc" "FlowNet2_src/ops/correlation/correlation_op.cc"
+GPU_SRC_CORRELATION  = FlowNet2_src/ops/correlation/correlation_kernel.cu.cc
+GPU_SRC_CORRELATION_GRAD  = FlowNet2_src/ops/correlation/correlation_grad_kernel.cu.cc
+GPU_SRC_PAD = FlowNet2_src/ops/correlation/pad.cu.cc
 GPU_PROD_CORRELATION = $(OUT_DIR)/correlation_kernel_gpu.o
 GPU_PROD_CORRELATION_GRAD = $(OUT_DIR)/correlation_grad_kernel_gpu.o
 GPU_PROD_PAD = $(OUT_DIR)/correlation_pad_gpu.o
 CORRELATION_PROD 	= $(OUT_DIR)/correlation.so
 
-FLOWWARP_SRC = "src/ops/flow_warp/flow_warp_op.cc" "src/ops/flow_warp/flow_warp.cc" "src/ops/flow_warp/flow_warp_grad.cc"
-GPU_SRC_FLOWWARP = "src/ops/flow_warp/flow_warp.cu.cc"
-GPU_SRC_FLOWWARP_GRAD = "src/ops/flow_warp/flow_warp_grad.cu.cc"
+FLOWWARP_SRC = "FlowNet2_src/ops/flow_warp/flow_warp_op.cc" "FlowNet2_src/ops/flow_warp/flow_warp.cc" "FlowNet2_src/ops/flow_warp/flow_warp_grad.cc"
+GPU_SRC_FLOWWARP = "FlowNet2_src/ops/flow_warp/flow_warp.cu.cc"
+GPU_SRC_FLOWWARP_GRAD = "FlowNet2_src/ops/flow_warp/flow_warp_grad.cu.cc"
 GPU_PROD_FLOWWARP = "$(OUT_DIR)/flow_warp_gpu.o"
 GPU_PROD_FLOWWARP_GRAD = "$(OUT_DIR)/flow_warp_grad_gpu.o"
 FLOWWARP_PROD = "$(OUT_DIR)/flow_warp.so"
