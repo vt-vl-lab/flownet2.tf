@@ -34,7 +34,10 @@ Notice that the model itself will handle the RGB to BGR operation for you. And p
 * Remove the `training_schedule` variable from inference mode.
 
 
-### Sources
+### Reference
 [1] E. Ilg, N. Mayer, T. Saikia, M. Keuper, A. Dosovitskiy, T. Brox
 FlowNet 2.0: Evolution of Optical Flow Estimation with Deep Networks,
 IEEE Conference in Computer Vision and Pattern Recognition (CVPR), 2017.
+
+### Acknowledgments
+As noted in the beginning, most part are from [sampepose/flownet2-tf](https://github.com/sampepose/flownet2-tf)
