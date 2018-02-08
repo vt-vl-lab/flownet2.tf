@@ -10,8 +10,9 @@ This code has been tested with Python3.6 and TensorFlow1.2.0, with a Tesla K80 G
 
 ### Installation
 
-You must have CUDA installed:
-`make all`
+You must have CUDA installed: `make all`
+
+**Note:** you might need to modify [this line](https://github.com/vt-vl-lab/tf_flownet2/blob/master/Makefile#L13), according to the GPU you use.
 
 ### Download weights
 To download the weights for all models (4.4GB), run the `download.sh` script in the `FlowNet2_src/checkpoints` directory. All test scripts rely on these checkpoints to work properly.
