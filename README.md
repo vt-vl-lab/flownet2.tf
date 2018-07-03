@@ -29,6 +29,15 @@ If installation is successful, you should see the following:
 
 Notice that the model itself will handle the RGB to BGR operation for you. And please be care about your input scale and datatype.
 
+### Performance (w/o fine-tuning)
+
+| Model       | KITTI2012 Train EPE     |  KITTI2015 Train EPE     |  KITTI2015 Train F1     |  Sintel Final Train EPE |
+|-------------|--------|--------|--------|--------|
+| FlowNetS       | 7.2457     |  14.0753     |  0.5096     |  3.9140     |
+| FlowNetC       | 5.9793    |  11.8957     |  0.4509     |  3.1001     |
+| FlowNet2       | 4.3167     |  10.9869     |  0.3241     |  2.1592     |
+
+FlowNetS and FlowNetC are better than paper, but FlowNet2 is slightly worse.
 
 ### TODO
 * Add fine-tune mode
